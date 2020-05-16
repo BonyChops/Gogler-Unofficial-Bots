@@ -1,7 +1,9 @@
 import discord
 
 with open ("main_token.txt") as tkn:
-    TOKEN = tkn.read() #トークンを文字列として読み込み
+    
+    #トークンを文字列として読み込み
+    TOKEN = tkn.read()
 
     #接続に必要なオブジェクト生成
     client = discord.Client()
