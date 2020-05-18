@@ -23,7 +23,7 @@ with open("happipy/happi_token.txt") as tkn:
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
                 await message.channel.send("/happy")
                 return
-            else :
+            else:
                 await message.channel.send("!5cho")
                 await message.channel.send("!spc")
                 for m in range(10):
