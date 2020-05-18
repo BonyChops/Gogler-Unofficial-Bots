@@ -9,7 +9,7 @@ with open("happipy/happi_token.txt") as tkn:
 
     @client.event
     async def on_ready():
-        print("ハッピッピくんログイン")
+        print("ハッピッピくんログイン中…")
 
     @client.event
     async def on_message(message):
