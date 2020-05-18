@@ -22,19 +22,22 @@ with open("happipy/happi_token.txt") as tkn:
         elif message.content == "/happy":
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
                 await message.channel.send("/happy")
+                return
             else :
                 await message.channel.send("!5cho")
                 await message.channel.send("!spc")
                 for m in range(10):
                     while m <= 10:
                         await message.channel.send("/happy")
+                return
         elif message.content == ("/stop"):
             if random.randrange(100) == 28:
                 await message.channel.send("お騒がせしました。")
-                pass
+                return
             else:
                 for n in range(10):
                     while n <= 0:
                         await message.channel.send("/happy")
+                return
         
     client.run(TOKEN)
