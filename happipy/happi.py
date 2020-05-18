@@ -18,7 +18,6 @@ with open("happipy/happi_token.txt") as tkn:
             print("!byeコマンド受信")
             time.sleep(60)
             await message.channel.send("お騒がせしました.")
-            pass
         elif message.content == "/happy":
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
                 await message.channel.send("/happy")
