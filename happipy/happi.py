@@ -13,7 +13,7 @@ with open("happipy/happi_token.txt") as tkn:
 
     @client.event
     async def on_message(message):
-        m,n = 0,0
+        l,m,n = 0,0,0
         if message.content == "!bye":
             print("!byeコマンド受信")
             time.sleep(60)
@@ -21,7 +21,9 @@ with open("happipy/happi_token.txt") as tkn:
             return
         elif message.content == "/happy":
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
-                await message.channel.send("/happy")
+                for l in range(10):
+                    while l <= 10:
+                        await message.channel.send("/happy")
                 return
             else:
                 await message.channel.send("!5cho")
