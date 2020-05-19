@@ -18,9 +18,8 @@ with open("tokens/happi_token.txt") as tkn:
         l,m,n = 0,0,0
         if message.content == "!bye":
             print("送信停止中...")
-            time.sleep(30)
+            time.sleep(60)
             await message.channel.send("お騒がせしました。")
-            time.sleep(30)
             print("送信停止解除")
             return
         elif message.content == "/happy":
@@ -39,9 +38,8 @@ with open("tokens/happi_token.txt") as tkn:
         elif message.content == ("/stop"):
             if random.randrange(100) == 28:
                 print("送信停止中...")
-                time.sleep(30)
+                time.sleep(60)
                 await message.channel.send("お騒がせしました。")
-                time.sleep(30)
                 print("送信停止解除")
                 return
             else:
