@@ -2,22 +2,26 @@ import discord
 import random
 import time
 
-with open("happipy/happi_token.txt") as tkn:
+with open("tokens/happi_token.txt") as tkn:
     TOKEN = tkn.read()
 
     client = discord.Client()
 
+#ログイン時操作
     @client.event
     async def on_ready():
         print("ハッピッピくんログイン中…")
 
+#メッセージ受信時動作
     @client.event
     async def on_message(message):
         l,m,n = 0,0,0
         if message.content == "!bye":
-            print("!byeコマンド受信")
-            time.sleep(60)
+            print("送信停止中...")
+            time.sleep(30)
             await message.channel.send("お騒がせしました。")
+            time.sleep(30)
+            print("送信停止解除")
             return
         elif message.content == "/happy":
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
@@ -34,7 +38,11 @@ with open("happipy/happi_token.txt") as tkn:
                 return
         elif message.content == ("/stop"):
             if random.randrange(100) == 28:
+                print("送信停止中...")
+                time.sleep(30)
                 await message.channel.send("お騒がせしました。")
+                time.sleep(30)
+                print("送信停止解除")
                 return
             else:
                 for n in range(10):
