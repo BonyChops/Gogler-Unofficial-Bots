@@ -7,12 +7,10 @@ with open("tokens/happi_token.txt") as tkn:
 
     client = discord.Client()
 
-#ログイン時操作
     @client.event
     async def on_ready():
-        print("ハッピッピくんログイン中…")
+        print("ハッピッピくんログイン中…"
 
-#メッセージ受信時動作
     @client.event
     async def on_message(message):
         l,m,n = 0,0,0
