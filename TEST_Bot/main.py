@@ -27,6 +27,6 @@ with open ("tokens/main_token.txt") as tkn:
             await message.channel.send(":thinking:")
     
         if message.content == "おい":
-            await message.channel.send(f"{message.author.mention}" + ":anger:")
+            await message.channel.send(":anger:")
     
     client.run(TOKEN)
