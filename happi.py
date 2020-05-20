@@ -13,37 +13,38 @@ with open("tokens/happi_token.txt") as tkn:
 
     @client.event
     async def on_message(message):
-        l,m,n = 0,0,0
+        cnt = 0
         if message.content == "!bye":
             print("送信停止中...")
             time.sleep(60)
             await message.channel.send("お騒がせしました。")
             print("送信停止解除")
-            return
+            break
         elif message.content == "/happy":
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
-                for l in range(10):
-                    while l <= 10:
-                        await message.channel.send("/happy")
-                return
+                while cnt <= 10:
+                    await message.channel.send("/happy")
+                    cnt += 1
+                break
+
             else:
                 await message.channel.send("!5cho")
                 await message.channel.send("!spc")
-                for m in range(10):
-                    while m <= 10:
-                        await message.channel.send("/happy")
-                return
+                while cnt <= 5:
+                    await message.channel.send("/happy")
+                    cnt += 1
+                break
+
         elif message.content == ("/stop"):
             if random.randrange(100) == 28:
                 print("送信停止中...")
                 time.sleep(60)
                 await message.channel.send("お騒がせしました。")
                 print("送信停止解除")
-                return
+                break
             else:
-                for n in range(10):
-                    while n <= 0:
-                        await message.channel.send("/happy")
-                return
+                while cnt <= 10:
+                    await message.channel.send("/happy")
+                break
         
     client.run(TOKEN)

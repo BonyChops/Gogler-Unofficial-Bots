@@ -2,9 +2,6 @@ import discord
 import requests
 import json
 
-#Gogler_Pointのエンドポイント(ラッパーみたい)
-endp = requests.get("https://bonychops.com/experiment/discord-police/api/getGoglerPoint.php")
-
 with open ("tokens/main_token.txt") as tkn:
     TOKEN = tkn.read() #トークンを文字列として読み込み
 
@@ -35,6 +32,8 @@ with open ("tokens/main_token.txt") as tkn:
             await message.channel.send(":anger:")
 
         if message.content == "/get point":
+            #Gogler_Pointのエンドポイント(ラッパーみたい)
+            endp = requests.get("https://bonychops.com/experiment/discord-police/api/getGoglerPoint.php")
             data = json.loads(endp.text) #data関数にjson内の情報をブチコ
             for member in data["data"].values():
                 await message.channel.send(f'{member["name"]}は現在{member["point"]}ptです。')
