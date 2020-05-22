@@ -1,4 +1,5 @@
 import discord
+import random
 import requests
 import json
 
@@ -8,17 +9,13 @@ with open ("tokens/main_token.txt") as tkn:
     #接続に必要なオブジェクト生成
     client = discord.Client()
 
-    #起動時動作
     @client.event
     async def on_ready():
         print("TESTログイン")
 
-    #メッセージ受信時動作
     @client.event
     async def on_message(message):
-        #if message.author.bot:
-        #    return 
-
+        cnt = 0
         if message.content == "/happy":
             await message.channel.send(",(便乗)")
 
@@ -27,9 +24,14 @@ with open ("tokens/main_token.txt") as tkn:
 
         if (message.content == "/uuum") or (message.content == "thinking"):
             await message.channel.send(":thinking:")
-    
-        if message.content == "おい":
-            await message.channel.send(":anger:")
+
+        if message.content == "うぉい！！":
+            while cnt <= 2:
+                if random.randrange(30) == 3:
+                    await message.channel.send(":pleading_face:")
+                else:
+                    await message.channel.send(":thinking:")
+                cnt += 1
 
         if message.content == "/get point":
             #Gogler_Pointのエンドポイント(ラッパーみたい)
