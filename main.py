@@ -25,7 +25,10 @@ with open ("tokens/main_token.txt") as tkn:
         if (message.content == "/uuum") or (message.content == "thinking"):
             await message.channel.send(":thinking:")
 
-        if message.content == "うぉい！！":
+        if message.content.find("NG") != -1:
+            await message.channel.send(":ng:")
+
+        if message.content.find("うぉい！！") != -1:
             while cnt <= 2:
                 if random.randrange(30) == 3:
                     await message.channel.send(":pleading_face:")

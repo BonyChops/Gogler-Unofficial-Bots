@@ -10,10 +10,13 @@ with open("tokens/happi_token.txt") as tkn:
     async def on_ready():
         print("ハッピッピくんログイン中…")
         await client.change_presence(activity = discord.Game(name = "起爆コマンド待機中...",type = 1))
+        mode = 0
 
     @client.event
     async def on_message(message):
         cnt = 0
+#        if mode == 1:
+#            await message.channel.send("")
         if message.content == "!bye":
             await client.change_presence(activity = discord.Game(name = "緊急停止信号受信・停止中..."))
             time.sleep(60)
@@ -21,6 +24,12 @@ with open("tokens/happi_token.txt") as tkn:
             print("送信停止解除")
             await client.change_presence(activity = discord.Game(name = "起爆コマンド待機中..."))
             return
+        if message.content.find("ハッピッピ") != -1:
+                if message.author.guild_permissions.administrator:
+                    await message.channel.send("呼んだ？？？")
+#                    mode = 1
+                else:
+                    await message.channel.send("君は僕の開発者じゃないよね？？？")
         elif message.content == "/happy":
             if (random.randrange(0,40,4) % 3 == 0) or (random.randrange(0,40,4) % 3 == 1):
                 while cnt <= 5:
