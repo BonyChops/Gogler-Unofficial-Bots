@@ -25,7 +25,7 @@ with open("tokens/happi_token.txt") as tkn:
             await client.change_presence(activity = discord.Game(name = "起爆コマンド待機中..."))
             return
         if message.content.find("ハッピッピ") != -1:
-                if message.author.guild_permissions.administrator:
+                if (message.author == message.guild.owner):
                     await message.channel.send("呼んだ？？？")
 #                    mode = 1
                 else:
