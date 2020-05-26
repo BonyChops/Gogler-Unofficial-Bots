@@ -26,7 +26,10 @@ with open ("tokens/main_token.txt") as tkn:
             await message.channel.send(":thinking:")
 
         if message.content.find("NG") != -1:
-            await message.channel.send(":ng:")
+            if (message.content.find("ING") != -1) or (message.content.find("NGO") != -1):
+                return
+            else:
+                await message.channel.send(":ng:")
 
         if message.content.find("うぉい！！") != -1:
             while cnt <= 2:
