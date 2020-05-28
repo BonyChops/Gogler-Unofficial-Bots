@@ -5,8 +5,9 @@ const fs = require('fs');
 const config = JSON.parse(fs.readFileSync(__dirname+'/config.json'));
 const accessToken = config.token;
 const target = config.target;
+const api = config.api;
 const options = {
-    url: 'https://bonychops.com/experiment/discord-police/api/getGoglerPoint.php',
+    url: api,
     method: 'GET',
     json: true
 }
