@@ -1,8 +1,13 @@
-# Discord_Bots
-There are some cute Bots I made.
+# Gogler-Unofficial-Bots
+非公式のねこです。よろしくおねがいします。  
+Goglerのbotが動いていない間に反応します。  
+簡単に言うとGoglerのbotのJS版です。
 
-- __TEST_Bots__ : My first Discord Bot production.
-- __Happipy__ : Very trouble Bot.
+# Forked from
+- ### [Discord_Bots](https://github.com/Gogler2828/Discord_Bots)
+
+# Package
+- ### [discord.js](https://discord.js.org)
 
 # Caution
-Gomi code.
+Kasu code.
